@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { MainContext } from "../context/mainContext.tsx";
 // import { Hero, Popular, Offers, NewCollection, NewsLetter } from "../components";
 // import ScrollToTop from "../../ScrollToTop";
-import Spinner from "../components/Spinner.tsx";
+import Spinner from "../components/Spinner";
 
 
 
@@ -16,10 +16,11 @@ const Home = () => {
         ?
         <div className="w-full flex justify-center items-center h-[100vh]">
           <div className="w-full flex flex-col justify-center items-center">
-            <div className="text-center text-[20px] font-bold mb-4">
+            <div className="text-center text-[30px] font-bold mb-4">
               Loading, Please wait...
             </div>
-            <Spinner borColor2="#0db915" dim2="65px" dim3="50px" />
+            {/* <Spinner borColor2="#0db915" dim2="65px" dim3="50px" /> */}
+            <Spinner />
           </div>
         </div>
         :

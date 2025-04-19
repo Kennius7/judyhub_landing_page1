@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { AppBar, Toolbar, Typography, IconButton, Avatar, Drawer, List, ListItem } from "@mui/material";
 import { Menu } from "@mui/icons-material";
@@ -181,12 +180,12 @@ const Navbar = () => {
                     {/* From Login to Mobile Menu Button Section */}
                     <div className="flexCenter xs:gap-x-4 gap-x-1">
                         {/* Login Button */}
-                        <button 
+                        {/* <button 
                             onClick={()=>navigate("/login")} 
                             className='xs:block hidden text-white bg-secondaryBrown px-5 py-[6px] rounded-md shadow-md 
                             hover:bg-gray-200'>
                             Sign in
-                        </button>
+                        </button> */}
 
                         {/* Welcome Text */}
                         <Typography variant="h6" sx={{ display: { xs: "none", sm: "flex" }, flexGrow: 1 }}>
