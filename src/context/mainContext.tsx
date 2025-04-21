@@ -1,5 +1,4 @@
-import { createContext,Dispatch, SetStateAction } from "react";
-
+import { createContext, Dispatch, SetStateAction } from "react";
 
 
 type Product = {

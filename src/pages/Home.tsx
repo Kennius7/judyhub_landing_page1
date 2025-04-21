@@ -4,6 +4,7 @@ import { MainContext } from "../context/mainContext.tsx";
 // import ScrollToTop from "../../ScrollToTop";
 import Spinner from "../components/Spinner2";
 import Hero from "../components/Hero";
+import NewCollection from "../components/NewCollection";
 
 
 
@@ -31,12 +32,12 @@ const Home = () => {
             <Spinner />
           </div>
         :
-        <section style={{ width: "100%", backgroundColor: "#000" }}>
+        <section>
           {/* <ScrollToTop/> */}
           <Hero/>
+          <NewCollection/>
           {/* <Popular/>
           <Offers/>
-          <NewCollection/>
           <NewsLetter/> */}
         </section>
       }
