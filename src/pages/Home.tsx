@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { MainContext } from "../context/mainContext.tsx";
 // import { Hero, Popular, Offers, NewCollection, NewsLetter } from "../components";
 // import ScrollToTop from "../../ScrollToTop";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Spinner2";
+import Hero from "../components/Hero";
 
 
 
@@ -10,30 +11,36 @@ const Home = () => {
   const { fetchedData } = useContext(MainContext);
 
   return (
-    <>
+    <div style={{ width: "100%", backgroundColor: "#200500" }}>
       {
-        fetchedData.products.length === 0
+        fetchedData.length === 0
         ?
-        <div className="w-full flex justify-center items-center h-[100vh]">
-          <div className="w-full flex flex-col justify-center items-center">
-            <div className="text-center text-[30px] font-bold mb-4">
-              Loading, Please wait...
+          <div className="flex flex-col justify-center items-center">
+            <div 
+              style={{ 
+                marginBottom: 24, 
+                fontFamily: "sans-serif", 
+                textAlign: "center", 
+                fontWeight: "600",
+                fontSize: "20px",
+                color: "black",
+              }}
+            >
+              Loading, please wait...
             </div>
-            {/* <Spinner borColor2="#0db915" dim2="65px" dim3="50px" /> */}
             <Spinner />
           </div>
-        </div>
         :
-        <section className="">
-          {/* <ScrollToTop/>
+        <section style={{ width: "100%", backgroundColor: "#000" }}>
+          {/* <ScrollToTop/> */}
           <Hero/>
-          <Popular/>
+          {/* <Popular/>
           <Offers/>
           <NewCollection/>
           <NewsLetter/> */}
         </section>
       }
-    </>
+    </div>
   )
 }
 

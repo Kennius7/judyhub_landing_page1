@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 
 const Spinner = ({ 
-    dim1=80, dim2="70px", dim3="60px", 
-    borWidth=4, borColor1="#613207", 
+    dim1="80px", dim2="70px", dim3="60px", 
+    borWidth="4px", borColor1="#613207", 
     borColor2="#613207", borColor3="#613207" 
 }) => {
 
@@ -14,7 +12,7 @@ const Spinner = ({
                     width: dim1, 
                     height: dim1, 
                     borderWidth: borWidth, 
-                    borderColor: "#613207",
+                    borderColor: borColor1,
                     borderTopColor: "transparent",
                     borderRadius: "100%",
                     backgroundColor: "#fed000",
@@ -29,9 +27,11 @@ const Spinner = ({
                         borderColor: borColor2,
                         borderTopColor: "transparent",
                         borderRadius: "100%",
+                        backgroundColor: "#aab000",
                     }}
                     // style={{ width: dim2, height: dim2, borderWidth: borWidth, borderColor: borColor2 }} 
-                    className="animate-spin flex flex-row justify-center item-center">
+                    className="animate-spin flex flex-row justify-center item-center"
+                >Checking...
                     <div 
                         style={{ 
                             width: dim3, 
@@ -47,6 +47,23 @@ const Spinner = ({
             </div>
         </div>
     )
+
+    // return (
+    //     <div className="flexCenter">
+    //         <div 
+    //             style={{ width: dim1, height: dim1, borderWidth: borWidth, borderColor: borColor1 }} 
+    //             className="!border-t-transparent rounded-full animate-spin flexCenter">Spinner words!
+    //             <div 
+    //                 style={{ width: dim2, height: dim2, borderWidth: borWidth, borderColor: borColor2 }} 
+    //                 className="!border-t-transparent rounded-full animate-spin flexCenter">
+    //                 <div 
+    //                     style={{ width: dim3, height: dim3, borderWidth: borWidth, borderColor: borColor3 }} 
+    //                     className="!border-t-transparent rounded-full animate-spin flexCenter">
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // )
 }
 
 export default Spinner

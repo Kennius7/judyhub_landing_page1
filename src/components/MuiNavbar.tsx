@@ -126,7 +126,7 @@ const Navbar = () => {
         <>
             <AppBar 
                 position="fixed" 
-                sx={{ background: "#0db915", zIndex: 10, opacity: 0.9 }} 
+                sx={{ background: "#0db915", zIndex: 10, opacity: 0.9, width: "100%", paddingX: 2 }} 
                 className="backdrop-blur-md !important"
             >
                 <Toolbar sx={{ 
@@ -176,61 +176,13 @@ const Navbar = () => {
                         }
                     </Box> */}
 
-
-                    {/* From Login to Mobile Menu Button Section */}
-                    <div className="flexCenter xs:gap-x-4 gap-x-1">
-                        {/* Login Button */}
-                        {/* <button 
-                            onClick={()=>navigate("/login")} 
-                            className='xs:block hidden text-white bg-secondaryBrown px-5 py-[6px] rounded-md shadow-md 
-                            hover:bg-gray-200'>
-                            Sign in
-                        </button> */}
-
-                        {/* Welcome Text */}
-                        <Typography variant="h6" sx={{ display: { xs: "none", sm: "flex" }, flexGrow: 1 }}>
-                            "Hi, and welcome to Judyhub!"
-                        </Typography>
-
-                        {/* Profile Avatar */}
-                        {/* <Avatar
-                            alt="Guest"
-                            src={image}
-                            onClick={profPicsNavigator}
-                            sx={{ 
-                                width: window.innerWidth > 768 ? 40 : 
-                                window.innerWidth < 768 && window.innerWidth > 480 ? 40 : 35,
-                                height: window.innerWidth > 768 ? 40 : 
-                                window.innerWidth < 768 && window.innerWidth > 480 ? 40 : 35, 
-                                cursor: "pointer", 
-                                border: "2px solid #fff",
-                            }}
-                        /> */}
-
-                        {/* Cart Icon */}
-                        {/* <IconButton
-                            color="inherit"
-                            onClick={() => navigate("/cart")}
-                            // sx={{ display: { xs: "none", sm: "inline-flex" } }}
+                    <div className="flex flex-row justify-center item-center">
+                        <div 
+                            style={{ fontFamily: "sans-serif", fontSize: window.innerWidth > 768 ? "24px" : "17px" }} 
+                            className="w-full text-[#00040f]"
                         >
-                            <Badge 
-                                badgeContent={cartData.length} 
-                                color="error"
-                                sx={{ 
-                                    width: window.innerWidth > 500 ? 30 : 26, 
-                                    height: window.innerWidth > 500 ? 30 : 26, 
-                                }}
-                            >
-                                <ShoppingCart 
-                                    className="xs:animate-pulseBorder animate-none !important" 
-                                    sx={{ 
-                                        width: window.innerWidth > 500 ? 35 : 30, 
-                                        height: window.innerWidth > 500 ? 35 : 30, 
-                                        borderRadius: "51%" 
-                                    }} 
-                                />
-                            </Badge>
-                        </IconButton> */}
+                            Hi, and welcome to Judyhub!
+                        </div>
 
                         {/* Mobile Menu Button */}
                         <IconButton
