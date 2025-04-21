@@ -9,14 +9,14 @@ const Hero = () => {
 
     return (
         <Box
-            className="bg-hero1 title-text-shadow5 !important"
+            className="bg-hero1 title-text-shadow5"
             sx={{
                 // backgroundImage: 'url(../assets/bg1.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 width: '100%',
-                height: window.innerWidth > 768 ? '70vh' : '65vh',
+                height: window.innerWidth > 768 ? '70vh' : '72vh',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',

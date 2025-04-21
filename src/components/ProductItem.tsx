@@ -33,7 +33,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
     return (
         <Card
             sx={{ 
-                width: window.innerWidth > 500 ? 195 : (window.innerWidth * 0.333) - 10, 
+                width: window.innerWidth > 768 ? 195 : (window.innerWidth * 0.333) - 10, 
                 boxShadow: 5, 
                 borderRadius: 2,
                 padding: 0,

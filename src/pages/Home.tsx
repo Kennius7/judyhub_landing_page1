@@ -12,11 +12,11 @@ const Home = () => {
   const { fetchedData } = useContext(MainContext);
 
   return (
-    <div style={{ width: "100%", backgroundColor: "#200500" }}>
+    <div className="w-full flex-center">
       {
         fetchedData.length === 0
         ?
-          <div className="flex flex-col justify-center items-center">
+          <div className="w-full h-[100vh] flex flex-col justify-center items-center">
             <div 
               style={{ 
                 marginBottom: 24, 
@@ -32,7 +32,7 @@ const Home = () => {
             <Spinner />
           </div>
         :
-        <section>
+        <section className="w-full">
           {/* <ScrollToTop/> */}
           <Hero/>
           <NewCollection/>
