@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 import MuiNavbar from "./components/MuiNavbar";
+import Footer from './components/Footer';
 import { AllProducts } from './data';
 import Product from "./context/mainContext";
 
@@ -50,7 +51,8 @@ function App() {
             <MuiNavbar/>
             <Routes>
               <Route path={"/"} element={<Home/>} />
-            </Routes>          
+            </Routes>
+            <Footer/>
           </BrowserRouter>
 
 
