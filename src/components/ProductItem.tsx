@@ -33,127 +33,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
     // const productQuantity = itemQuantity ? itemQuantity.quantity : 1;
     // console.log("Filtered Data:>>>", productQuantity);
 
-
     return (
-        // <Card
-        //     sx={{ 
-        //         width: window.innerWidth > 768 ? 195 : (window.innerWidth * 0.333) - 10, 
-        //         boxShadow: 5, 
-        //         borderRadius: 2,
-        //         padding: 0,
-        //         margin: 0, 
-        //         display: "flex", 
-        //         flexDirection: "column", 
-        //         justifyContent: "center", 
-        //         alignItems: "flex-start",
-        //         position: "relative",
-        //     }}
-        // >
-        //     <CardMedia
-        //         onClick={() => navigate(`/product/${id}`) }
-        //         component="img"
-        //         height="100"
-        //         image={image}
-        //         alt={name}
-        //     />
-        //     <Search 
-        //         htmlColor={"#fff"} 
-        //         sx={{ 
-        //             width: 30, 
-        //             height: 30,
-        //             position: "absolute",
-        //             zIndex: 4,
-        //             top: "25%",
-        //             left: "40%",
-        //         }} 
-        //     />
-
-        //     {/* Product Details */}
-        //     <CardContent 
-        //         sx={{ 
-        //             padding: 1,
-        //             marginTop: -1,
-        //             height: 100, 
-        //             display: "flex", 
-        //             flexDirection: "column", 
-        //             justifyContent: "center", 
-        //             alignItems: "flex-start",
-        //         }}
-        //     >
-        //         {/* Product Name */}
-        //         <Typography 
-        //             variant="h6" 
-        //             component="div" 
-        //             color={secondaryBrown}
-        //             sx={{ 
-        //                 mt: -3,
-        //                 fontSize: window.innerWidth > 500 ? 14 : 12
-        //             }}
-        //         >
-        //             {name}
-        //         </Typography>
-        
-        //         {/* Price Section */}
-        //         <Box sx={{ display: 'flex', alignItems: 'center', mt: 0 }}>
-        //             <Typography 
-        //                 variant="body1" 
-        //                 color={primaryGreen} 
-        //                 sx={{ 
-        //                     mr: 1, 
-        //                     fontSize: window.innerWidth > 500 ? 14 : 11 
-        //                 }}
-        //             >
-        //                 {NGN}{newPrice}
-        //             </Typography>
-        //             {
-        //                 oldPrice && (
-        //                     <Typography
-        //                         variant="body2"
-        //                         color="text.secondary"
-        //                         sx={{ 
-        //                             textDecoration: 'line-through', 
-        //                             fontSize: window.innerWidth > 500 ? 14 : 10
-        //                         }}
-        //                     >
-        //                         {NGN}{oldPrice}
-        //                     </Typography>
-        //                 )
-        //             }
-        //         </Box>
-
-        //         <Typography 
-        //             variant="body2" 
-        //             color="text.secondary" 
-        //             sx={{ 
-        //                 mt: window.innerWidth > 500 ? 0 : 0.5, 
-        //                 fontSize: window.innerWidth > 500 ? 14 : 9 
-        //             }}
-        //         >
-        //             Stock: {stock || 1} pieces.
-        //         </Typography>
-        //     </CardContent>
-
-        //     {/* Actions */}
-        //     <CardActions className="w-full h-[25px] flexBetween xs:-mt-6 -mt-8 !important">
-        //         <ShoppingCart 
-        //             // onClick={() => addCartData(id, name, newPrice, productQuantity, setProfileFormData)}
-        //             htmlColor={primaryGreen} 
-        //             sx={{ 
-        //                 width: window.innerWidth > 500 ? 22 : 15, 
-        //                 height: window.innerWidth > 500 ? 22 : 15, 
-        //                 borderRadius: "51%" 
-        //             }} 
-        //         />
-        //         <Typography 
-        //             onClick={() => navigate(`/product/${id}`) }
-        //             variant="body2" 
-        //             color={secondaryBrown} 
-        //             sx={{ mt: 0, fontSize: window.innerWidth > 500 ? 14 : 9 }}>
-        //             See more
-        //         </Typography>
-        //     </CardActions>
-        // </Card>
-
         <div 
             style={{ backgroundColor: primaryGreen, color: "#000" }}
             className={
@@ -165,7 +45,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                 onClick={() => handleClick(id)} 
                 src={image} 
                 alt={name} 
-                className="w-[99%] sm:h-[220px] h-[160px] object-cover mt-[2px] rounded-[8px]"
+                className="w-full sm:h-[220px] h-[160px] object-cover"
             />
             <Search 
                 htmlColor={"#fff"} 
