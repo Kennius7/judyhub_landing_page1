@@ -19,7 +19,7 @@ function App() {
   const simulateFetchProductData = () => {
     console.log("Fetching...");
     setTimeout(() => {
-      setFetchedData(prev => [ ...prev, ...AllProducts ]);
+      setFetchedData(AllProducts);
     }, 1000);
   }
   

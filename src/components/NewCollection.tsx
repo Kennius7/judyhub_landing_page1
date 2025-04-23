@@ -20,12 +20,12 @@ const NewCollection = () => {
                 className="h-[3px] md:w-1/2 mx-auto bg-gradient-to-l from-transparent 
                 via-black to-transparent sm:mb-[80px] mb-[30px]"
             />
-            <div className="w-full mt-[10px] grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 sm:gap-x-1 
-                gap-x-[1px] sm:gap-y-1 gap-y-[6px] px-2">
+            <div className="w-full mt-[10px] grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-x-1 
+                gap-x-[8px] sm:gap-y-1 gap-y-[6px] px-2">
                 {
-                    LatestProducts.filter(product => product.tags === "latest").map(
-                        product => <ProductItem item={product} key={product.id} />
-                    )
+                    LatestProducts
+                    .filter(product => product.tags === "latest")
+                    .map(product => <ProductItem item={product} key={product.id} />)
                 }
             </div>
         </section>
