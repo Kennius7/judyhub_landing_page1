@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { ShoppingCart, Search } from "@mui/icons-material";
 import getSymbolFromCurrency from 'currency-symbol-map'
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { MainContext } from "../context/mainContext";
+import Modal from "../modal";
+import ProductDesc from "./ProductDesc";
 
 
 type Product = { 
@@ -23,9 +25,13 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
     const { primaryGreen, secondaryBrown } = useContext(MainContext);
     const NGN = getSymbolFromCurrency('NGN');
     const stock = 20;
+    const [isShow, setIsShow] = useState(false);
+    const [title] = useState("Product Purchase");
+    const handleClose = () => setIsShow(false);
 
     const handleClick = (id: number) => {
         console.log("Clicking product of number:>>>", id);
+        setIsShow(true);
     }
 
     // const tags = ['New', 'Popular', 'Limited Edition'] 
@@ -45,7 +51,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                 onClick={() => handleClick(id)} 
                 src={image} 
                 alt={name} 
-                className="w-full sm:h-[220px] h-[160px] object-cover"
+                className="w-full sm:h-[220px] h-[160px] object-cover cursor-pointer"
             />
             <Search 
                 htmlColor={"#fff"} 
@@ -84,7 +90,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                         sx={{ 
                             width: window.innerWidth > 500 ? 22 : 18, 
                             height: window.innerWidth > 500 ? 22 : 18, 
-                            borderRadius: "51%" 
+                            borderRadius: "51%", cursor: "pointer" 
                         }} 
                     />
                     <div 
@@ -95,6 +101,12 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                     </div>
                 </div>
             </div>
+            {
+                isShow && 
+                    <Modal show={isShow} onClose={handleClose} title={title}>
+                        <ProductDesc/>
+                    </Modal>
+            }
         </div>
     )
 }

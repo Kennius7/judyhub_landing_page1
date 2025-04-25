@@ -162,11 +162,24 @@
 }
 
 .fadeInAnimate {
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s forwards;
 }
 
 .fadeInAnimate1 {
   animation: fadeIn 1s ease;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.9); }
+}
+
+.fadeOutAnimate {
+  animation: fadeOut 0.5s forwards;
+}
+
+.fadeOutAnimate1 {
+  animation: fadeOut 1s ease;
 }
 
 .fadeOut {
@@ -176,6 +189,25 @@
 .fadeIn {
   opacity: 1;
 }
+
+.overlayFadeIn {
+  animation: overlayFadeIn 0.3s forwards;
+}
+
+.overlayFadeOut {
+  animation: overlayFadeOut 0.3s forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlayFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 
 @keyframes spin {
   to {

@@ -21,7 +21,7 @@ const NewCollection = () => {
                 via-black to-transparent sm:mb-[80px] mb-[30px]"
             />
             <div className="w-full mt-[10px] grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 sm:gap-x-1 
-                gap-x-[8px] sm:gap-y-1 gap-y-[6px] px-2">
+                gap-x-[8px] sm:gap-y-2 gap-y-[6px] px-2">
                 {
                     LatestProducts
                     .filter(product => product.tags === "latest")
