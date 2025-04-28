@@ -12,13 +12,12 @@ interface FormData {
 const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
     const { cartData } = useContext(MainContext);
     const NGN = getSymbolFromCurrency("NGN");
+    const sellerPhoneNumber = "2347066936304";
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         message: "",
     });
-
-    const sellerPhoneNumber = "2347033325279"; // Replace with seller's WhatsApp number
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({

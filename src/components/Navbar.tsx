@@ -31,10 +31,6 @@ const Navbar = () => {
         setShowCart(true);
     }
     const handleCloseCart = () => setShowCart(false);
-    
-    // const profPicsNavigator = () => {
-    //     if (isLoggedIn && !isTokenExpired) { navigate("/profile") } else { navigate("/login") }
-    // }
 
     const drawer = (
         <List sx={{ 
@@ -188,10 +184,10 @@ const Navbar = () => {
                         }
                     </Box> */}
 
-                    <div className="flex flex-row justify-between item-center">
+                    <div className="flex flex-row justify-around item-center">
                         <div 
                             style={{ fontFamily: "sans-serif", fontSize: window.innerWidth > 768 ? "24px" : "17px" }} 
-                            className="w-full text-[#00040f]"
+                            className="w-full text-[#00040f] py-1"
                         >
                             Welcome to Judyhub!
                         </div>
