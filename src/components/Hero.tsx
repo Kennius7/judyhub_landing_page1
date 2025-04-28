@@ -4,8 +4,8 @@ import { MainContext } from "../context/mainContext";
 
 
 const Hero = () => {
-    const { primaryGreen, fetchedData } = useContext(MainContext);
-    console.log("Products Data", fetchedData);
+    const { primaryGreen } = useContext(MainContext);
+    // console.log("Products Data", fetchedData);
 
     return (
         <Box

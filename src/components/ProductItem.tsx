@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { ShoppingCart, Search } from "@mui/icons-material";
 import getSymbolFromCurrency from 'currency-symbol-map'
-import { useState, useContext } from "react";
+import { useState, useContext, useMemo } from "react";
 import { MainContext } from "../context/mainContext";
 import Modal from "../modal";
+import ModalPics from "../modal/ModalPics";
 import ProductDesc from "./ProductDesc";
+import ProductPicsDisplay from "./ProductPicsDisplay";
 
 
 type Product = { 
@@ -15,23 +17,28 @@ type Product = {
     oldPrice: string; 
     category?: string;
     tags?: string;
-    description?: string; 
+    description: string; 
 };
 type ProductItemProps = { item: Product };
 
 const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
-    const { id, name, image, newPrice, oldPrice } = item;
-    const navigate = useNavigate();
+    const { id, name, image, newPrice, oldPrice, description } = item;
     const { primaryGreen, secondaryBrown } = useContext(MainContext);
-    const NGN = getSymbolFromCurrency('NGN');
+    const NGN = useMemo(() => getSymbolFromCurrency('NGN'), []); 
     const stock = 20;
     const [isShow, setIsShow] = useState(false);
-    const [title] = useState("Product Purchase");
-    const handleClose = () => setIsShow(false);
+    const [isShowPics, setIsShowPics] = useState(false);
+    const [title] = useState(`${id}. ${name}`);
 
+    const handleClose = () => setIsShow(false);
+    const handleClosePics = () => setIsShowPics(false);
     const handleClick = (id: number) => {
-        console.log("Clicking product of number:>>>", id);
+        console.log("Clicking product of Product ID:>>>", id);
         setIsShow(true);
+    }
+    const handlePicsClick = (id: number) => {
+        console.log("Clicking product Image of Product ID:>>>", id);
+        setIsShowPics(true);
     }
 
     // const tags = ['New', 'Popular', 'Limited Edition'] 
@@ -48,7 +55,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
             }
         >
             <img 
-                onClick={() => handleClick(id)} 
+                onClick={() => handlePicsClick(id)} 
                 src={image} 
                 alt={name} 
                 className="w-full sm:h-[220px] h-[160px] object-cover cursor-pointer"
@@ -86,6 +93,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                 <div className="w-full flex justify-between items-center mt-2">
                     <ShoppingCart 
                         // onClick={() => addCartData(id, name, newPrice, productQuantity, setProfileFormData)}
+                        onClick={() => handleClick(id)}
                         htmlColor={"#fff"} 
                         sx={{ 
                             width: window.innerWidth > 500 ? 22 : 18, 
@@ -94,7 +102,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                         }} 
                     />
                     <div 
-                        onClick={() => navigate(`/product/${id}`) } 
+                        // onClick={() => navigate(`/product/${id}`) } 
                         className="sm:text-[14px] text-[12px] font-semibold text-left"
                     >
                         See more...
@@ -104,8 +112,20 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
             {
                 isShow && 
                     <Modal show={isShow} onClose={handleClose} title={title}>
-                        <ProductDesc/>
+                        <ProductDesc id={id} name={name} image={image} price={newPrice} description={description} />
                     </Modal>
+            }
+            {
+                isShowPics && 
+                    <ModalPics 
+                        show={isShowPics} 
+                        onClose={handleClosePics} 
+                        title={title}
+                        width="600px"
+                        height="500px"
+                    >
+                        <ProductPicsDisplay image={image} onClose={handleClosePics} />
+                    </ModalPics>
             }
         </div>
     )

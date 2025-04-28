@@ -3,7 +3,7 @@ import { X_Icon } from "../assets";
 import { MainContext } from "../context/mainContext";
 
 
-const Modal = ({ 
+const ModalPics = ({ 
     show, 
     onClose, 
     title, 
@@ -20,33 +20,33 @@ const Modal = ({
 }) => {
 
     const [shouldRender, setShouldRender] = useState(show);
-    const { animateOut, setAnimateOut } = useContext(MainContext);
+    const { animateOutPics, setAnimateOutPics } = useContext(MainContext);
 
     useEffect(() => {
         if (show) {
             setShouldRender(true);
-            setAnimateOut(false);
+            setAnimateOutPics(false);
         } else {
-            setAnimateOut(true);
+            setAnimateOutPics(true);
         }
-    }, [show, setAnimateOut]);
+    }, [show, setAnimateOutPics]);
 
     const handleAnimationEnd = () => {
-        if (animateOut) {
+        if (animateOutPics) {
             setShouldRender(false);
             onClose();
         }
     };
 
     const handleOverlayAnimationEnd = () => {
-        if (animateOut) {
+        if (animateOutPics) {
             setShouldRender(false);
             onClose();
         }
     };
 
     const handleCloseEnd = () => {
-        if (animateOut) { onClose() }
+        if (animateOutPics) { onClose() }
     }
 
     if (!shouldRender) return null;
@@ -54,25 +54,25 @@ const Modal = ({
 
     return (
         <div 
-            onClick={() => setAnimateOut(true)} 
+            onClick={() => setAnimateOutPics(true)} 
             onTransitionEnd={handleOverlayAnimationEnd}
             onAnimationEnd={handleCloseEnd}
             className={`fixed top-0 left-0 z-[10] w-full h-full bg-slate-800/60 
-                flexCenter ${animateOut ? "overlayFadeOut" : "overlayFadeIn"}`}
+                flexCenter ${animateOutPics ? "overlayFadeOut" : "overlayFadeIn"}`}
         >
             <div 
                 onClick={ e => e.stopPropagation() } 
                 style={{ width: width, height: height }}
                 onTransitionEnd={ handleAnimationEnd }
                 className={`bg-white xs:p-[20px] p-[12px] rounded-lg shadow-[0px_0px_5px_0px_#faf5aac2] 
-                ${animateOut ? "fadeOutAnimate" : "fadeInAnimate"}`}
+                ${animateOutPics ? "fadeOutAnimate" : "fadeInAnimate"}`}
             >
                 <div className="w-full flexBetween">
                     <h2 className="xs:text-[22px] text-[17px] font-medium font-EncodeSans">
                         {title}
                     </h2>
                     <button 
-                        onClick={() => setAnimateOut(true)} 
+                        onClick={() => setAnimateOutPics(true)} 
                         className="flexCenter cursor-pointer"
                     >
                         <img src={ X_Icon } alt="x icon" className="w-4 h-4 object-cover"/>
@@ -87,4 +87,4 @@ const Modal = ({
     )
 }
 
-export default Modal
+export default ModalPics

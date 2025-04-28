@@ -1,45 +1,64 @@
 import { useEffect, useState } from 'react';
-import { MainContext } from "./context/mainContext";
+import { MainContext, Product, Cart } from "./context/mainContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
-import MuiNavbar from "./components/MuiNavbar";
+import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
 import { AllProducts } from './data';
-import Product from "./context/mainContext";
 
 
 function App() {
   const [active, setActive] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
   const [fetchedData, setFetchedData] = useState<Product[]>([]);
+  const [cartData, setCartData] = useState<Cart[]>([]);
+  const [animateOut, setAnimateOut] = useState(false);
+  const [animateOutPics, setAnimateOutPics] = useState(false);
+  const [animateOutCart, setAnimateOutCart] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const primaryGreen = "#0db915";
   const secondaryBrown = "#613207";
 
-  const simulateFetchProductData = () => {
-    console.log("Fetching...");
-    setTimeout(() => {
-      setFetchedData(AllProducts);
-    }, 1000);
-  }
   
+  const simulateFetchProductData = () => { setTimeout(() => { setFetchedData(AllProducts) }, 1000) }
+
+  // useEffect(() => {
+  //   // localStorage.setItem("user-cart", JSON.stringify(cartData));
+  //   const localStorageCart = JSON.parse(localStorage.getItem("user-cart") || "[]") as Cart[];
+  //   console.log("Logging Local Storage Cart Data:", localStorageCart);
+  //   setCartCount(localStorageCart.length) 
+  // }, [cartData])
+  
+  useEffect(() => { setTimeout(() => { simulateFetchProductData() }, 2000) }, [])
+
   useEffect(() => {
-    setTimeout(() => {
-      simulateFetchProductData();
-    }, 3000);
-  }, [])
+    const localStorageCart = JSON.parse(localStorage.getItem("user-cart") || "[]") as Cart[];
+    if (localStorageCart.length > 0) {
+      setCartData(localStorageCart);
+      setCartCount(localStorageCart.length);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("user-cart", JSON.stringify(cartData));
+  }, [cartData]);
+
+
 
   return (
     <>
       <MainContext.Provider 
         value={{ 
           active, setActive, fetchedData, setFetchedData, menuOpened, 
-          setMenuOpened, primaryGreen, secondaryBrown, 
+          setMenuOpened, primaryGreen, secondaryBrown, cartData, setCartData, 
+          animateOut, setAnimateOut, animateOutPics, setAnimateOutPics, 
+          cartCount, setCartCount, animateOutCart, setAnimateOutCart
         }}
       >
         <ToastContainer 
-          position='top-right' 
-          autoClose={1000} 
+          position='top-left' 
+          autoClose={2000} 
           hideProgressBar={false} 
           newestOnTop={true} 
           closeOnClick
@@ -48,7 +67,7 @@ function App() {
           theme='light'
         />
           <BrowserRouter>
-            <MuiNavbar/>
+            <Navbar/>
             <Routes>
               <Route path={"/"} element={<Home/>} />
             </Routes>

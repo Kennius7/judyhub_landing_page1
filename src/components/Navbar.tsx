@@ -1,9 +1,15 @@
-import { useContext } from "react";
-import { AppBar, Toolbar, Typography, IconButton, Avatar, Drawer, List, ListItem } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { useState, useContext } from "react";
+import { AppBar, Toolbar, Typography, Avatar, Drawer, List, ListItem } from "@mui/material";
+// import { Menu } from "@mui/icons-material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from '@mui/material/Badge';
+import IconButton from '@mui/material/IconButton';
+
 import { logoSvg } from "../assets";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../context/mainContext";
+import ModalCart from "../modal/ModalCart";
+import Cart from "../components/Cart";
 // import { NavLink } from "react-router-dom";
 // import { navLinks } from "../constants/data";
 // import { capitalize } from "lodash";
@@ -12,12 +18,19 @@ import { MainContext } from "../context/mainContext";
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const { menuOpened, setMenuOpened } = useContext(MainContext);
+    const { menuOpened, setMenuOpened, cartCount } = useContext(MainContext);
+    const [showCart, setShowCart] = useState(false);
+    const [cartHeader] = useState("Shopping Cart");
 
     // const { name, image, cartData } = profileFormData;
 
     const handleDrawerToggle = () => { setMenuOpened(!menuOpened) };
     const handleLoginNavigator = () => navigate("/login");
+    const handleCart = () => {
+        // localStorage.setItem("user-cart", JSON.stringify(cartData));
+        setShowCart(true);
+    }
+    const handleCloseCart = () => setShowCart(false);
     
     // const profPicsNavigator = () => {
     //     if (isLoggedIn && !isTokenExpired) { navigate("/profile") } else { navigate("/login") }
@@ -126,7 +139,7 @@ const Navbar = () => {
         <>
             <AppBar 
                 position="fixed" 
-                sx={{ background: "#0db915", zIndex: 10, opacity: 0.9, width: "100%", paddingX: 2 }} 
+                sx={{ background: "#0db915", zIndex: 10, opacity: 1, width: "100%", paddingX: 2 }} 
                 className="backdrop-blur-md !important"
             >
                 <Toolbar sx={{ 
@@ -142,7 +155,6 @@ const Navbar = () => {
                     <Avatar
                         alt="Judyhub logo"
                         src={logoSvg}
-                        onClick={()=>navigate("/")}
                         sx={{ 
                             width: window.innerWidth > 768 ? 55 : 
                             window.innerWidth < 768 && window.innerWidth > 480 ? 45 : 40,
@@ -176,16 +188,32 @@ const Navbar = () => {
                         }
                     </Box> */}
 
-                    <div className="flex flex-row justify-center item-center">
+                    <div className="flex flex-row justify-between item-center">
                         <div 
                             style={{ fontFamily: "sans-serif", fontSize: window.innerWidth > 768 ? "24px" : "17px" }} 
                             className="w-full text-[#00040f]"
                         >
-                            Hi, and welcome to Judyhub!
+                            Welcome to Judyhub!
+                        </div>
+
+                        <div onClick={handleCart} className="w-fit h-fit rounded-full ml-3 pulseBorder">
+                            <IconButton aria-label="cart">
+                                <Badge badgeContent={cartCount} color="error" showZero={false}>
+                                    <ShoppingCartIcon
+                                        // onClick={() => addCartData(id, name, newPrice, productQuantity, setProfileFormData)}
+                                        htmlColor={"white"}
+                                        sx={{ 
+                                            width: window.innerWidth > 500 ? 35 : 18, 
+                                            height: window.innerWidth > 500 ? 35 : 18, 
+                                            borderRadius: 9999, cursor: "pointer", 
+                                        }} 
+                                    />
+                                </Badge>
+                            </IconButton>
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <IconButton
+                        {/* <IconButton
                             edge="start"
                             color="inherit"
                             aria-label="menu"
@@ -193,7 +221,7 @@ const Navbar = () => {
                             onClick={handleDrawerToggle}
                         >
                             <Menu sx={{ width: 35, height: 35 }} />
-                        </IconButton>
+                        </IconButton> */}
                     </div>
                 </Toolbar>
             </AppBar>
@@ -202,6 +230,20 @@ const Navbar = () => {
             <Drawer anchor="right" open={menuOpened} onClose={handleDrawerToggle}>
                 {drawer}
             </Drawer>
+
+            {
+                showCart && (
+                    <ModalCart 
+                        show={showCart} 
+                        onClose={handleCloseCart} 
+                        title={cartHeader}
+                        width="600px"
+                        height="500px"
+                    >
+                        <Cart/>
+                    </ModalCart>
+                )
+            }
         </>
     );
 };
