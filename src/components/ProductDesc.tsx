@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const ProductDesc = ({ 
     id, image, name, price, description 
-}: { id: number, image: string, name: string, price: string, description: string }) => {
+}: { id: number, image: string[], name: string, price: string, description: string }) => {
     
     const NGN = useMemo(() => getSymbolFromCurrency('NGN'), []);
     const [productQuantity, setProductQuantity] = useState(1);
@@ -41,7 +41,7 @@ const ProductDesc = ({
                 Array(1).fill(0).map((_, index) => (
                     <div key={index} className="flex flex-col justify-center items-center mb-4">
                         <img
-                            src={image}
+                            src={image[0]}
                             alt={name}
                             className="w-[100%] h-[200px] object-cover rounded"
                         />

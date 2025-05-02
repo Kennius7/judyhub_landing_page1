@@ -1,6 +1,7 @@
 import { 
     FacebookIcon, InstagramIcon, YoutubeIcon, TwitterIcon, LinkedInIcon, Shirts1
 } from "../assets";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
 export const navLinks = [
     { name: "home", link: "/" },
@@ -16,7 +17,7 @@ export const AllProducts = [
         name: "Guchi Shirt",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "15,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -26,7 +27,7 @@ export const AllProducts = [
         name: "Praddi Shirt",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "8,000",
         oldPrice: "12,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -36,7 +37,7 @@ export const AllProducts = [
         name: "Luichi Shirt",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "7,000",
         oldPrice: "10,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -46,7 +47,7 @@ export const AllProducts = [
         name: "Bendi Shirt",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "12,000",
         oldPrice: "17,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -56,7 +57,7 @@ export const AllProducts = [
         name: "Niccini Shirt",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "14,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -66,7 +67,7 @@ export const AllProducts = [
         name: "Florini Shoes",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "20,000",
         oldPrice: "35,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -76,7 +77,7 @@ export const AllProducts = [
         name: "Gianni Shoes",
         category: "perfumes",
         tags: "popular",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "17,000",
         oldPrice: "25,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -86,7 +87,7 @@ export const AllProducts = [
         name: "Guchi Shirt",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "15,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -96,7 +97,7 @@ export const AllProducts = [
         name: "Praddi Shirt",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "8,000",
         oldPrice: "12,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -106,7 +107,7 @@ export const AllProducts = [
         name: "Luichi Shirt",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "7,000",
         oldPrice: "10,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -116,7 +117,7 @@ export const AllProducts = [
         name: "Bendi Shirt",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "12,000",
         oldPrice: "17,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -126,7 +127,7 @@ export const AllProducts = [
         name: "Niccini Shirt",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "14,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -136,7 +137,7 @@ export const AllProducts = [
         name: "Florini Shoes",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "20,000",
         oldPrice: "35,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -146,7 +147,7 @@ export const AllProducts = [
         name: "Gianni Shoes",
         category: "clothes",
         tags: "latest",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "17,000",
         oldPrice: "25,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -156,7 +157,7 @@ export const AllProducts = [
         name: "Guchi Shirt",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "15,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -166,7 +167,7 @@ export const AllProducts = [
         name: "Praddi Shirt",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "8,000",
         oldPrice: "12,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -176,7 +177,7 @@ export const AllProducts = [
         name: "Luichi Shirt",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "7,000",
         oldPrice: "10,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -186,7 +187,7 @@ export const AllProducts = [
         name: "Bendi Shirt",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "12,000",
         oldPrice: "17,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -196,7 +197,7 @@ export const AllProducts = [
         name: "Niccini Shirt",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "14,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -206,7 +207,7 @@ export const AllProducts = [
         name: "Florini Shoes",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "20,000",
         oldPrice: "35,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -216,7 +217,7 @@ export const AllProducts = [
         name: "Gianni Shoes",
         category: "skincare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "17,000",
         oldPrice: "25,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -226,7 +227,7 @@ export const AllProducts = [
         name: "Guchi Shirt",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "15,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -236,7 +237,7 @@ export const AllProducts = [
         name: "Praddi Shirt",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "8,000",
         oldPrice: "12,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -246,7 +247,7 @@ export const AllProducts = [
         name: "Luichi Shirt",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "7,000",
         oldPrice: "10,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -256,7 +257,7 @@ export const AllProducts = [
         name: "Bendi Shirt",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "12,000",
         oldPrice: "17,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -266,7 +267,7 @@ export const AllProducts = [
         name: "Niccini Shirt",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "10,000",
         oldPrice: "14,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -276,7 +277,7 @@ export const AllProducts = [
         name: "Florini Shoes",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "20,000",
         oldPrice: "35,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -286,7 +287,7 @@ export const AllProducts = [
         name: "Gianni Shoes",
         category: "haircare",
         tags: "",
-        image: Shirts1,
+        image: [Shirts1, Shirts1, Shirts1, Shirts1],
         newPrice: "17,000",
         oldPrice: "25,000",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis, lacus id bibendum malesuada, mauris orci interdum nulla, vel scelerisque odio lectus ut libero. Nulla facilisi. Aenean tincidunt, quam ut sagittis vestibulum, eros augue tincidunt mi, sit amet faucibus erat arcu a lorem. Sed varius, elit in fermentum volutpat, metus velit iaculis enim, at placerat augue est non nisi. Integer at urna id metus dapibus scelerisque. Ut ut nibh nec lectus eleifend fermentum. Proin feugiat arcu nec lacus molestie, eget hendrerit augue vehicula. Duis ac eros ut libero malesuada aliquet."
@@ -329,93 +330,46 @@ export const SOCIALS = {
 }
 
 
-
-
-
-// import axios from "axios";
-// import { userAPI } from "../constants/api";
-
-
-
-// export const uploadCartData = async (email, cartData) => {
-//     try {
-//         const apiType = "UPDATECART";
-//         const response = await axios.post(userAPI, { email, cartData, apiType });
-//         console.log("Cart Data:>>>>", cartData);
-//         const message = response.data.message;
-//         console.log("Response:>>>>", message);
-//         // downloadProfileData();
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
-
-// export const addCartData = (id, name, price, quantity, setProfileFormData) => {
-//     console.log("No cart data...");
-//     setProfileFormData(prevData => {
-//         const existingCart = prevData.cartData.find(item => item.id === id);
-    
-//         if (!existingCart) {
-//             // Add new item if it doesn't exist
-//             return {
-//                 ...prevData,
-//                 cartData: [...prevData.cartData, { id, name, price, quantity }],
-//             };
-//         } else {
-//             // Update quantity if item already exists
-//             return {
-//                 ...prevData,
-//                 cartData: prevData.cartData.map(item =>
-//                     item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-//                 ),
-//             };
-//         }
-//     });
-//     // uploadCartData(email, cartData);
-// }
-
-// export const updateCartData = (id, quantity, role, setProfileFormData) => {
-//     if (role === "add") {
-//         console.log("Role:", role, "Cart Data Id:", id);
-//         setProfileFormData(prevItems => ({
-//             ...prevItems,
-//             cartData: prevItems.cartData.map(item => item.id === id ? { ...item, quantity: quantity + 1 } : item)
-//         }))
-//         // uploadCartData(email, cartData);
-//     }
-//     if (role === "remove") {
-//         console.log("Role:", role, "Cart Data Id:", id);
-//         setProfileFormData(prevItems => ({
-//             ...prevItems,
-//             cartData: prevItems.cartData.map(item => item.id === id ? { ...item, quantity: quantity - 1 } : item)
-//         }))
-//         // uploadCartData(email, cartData);
-//     }
-//     if (quantity === 0) {
-//         console.log("Quantity after removed:", quantity);
-//         setProfileFormData(prevItems => prevItems.cartData.filter(item => item.id !== id))
-//         // uploadCartData(email, cartData);
-//     } 
-// }
-
-// export const removeCartData = (id, setProfileFormData) => {
-//     setProfileFormData(prevItems => ({
-//         ...prevItems,
-//         cartData: prevItems.cartData.filter(item => item.id !== id)
-//     }));
-//     // uploadCartData(email, cartData);
-// }
-
-// export const deleteAllCartData = (setProfileFormData) => { 
-//     setProfileFormData(prevData => ({ ...prevData, cartData: [] }));
-//     // uploadCartData(email, cartData);
-// }
-
 type Cart = {
     p_id: number;
     p_name: string;
     price: string;
     no_of_items: number;
+};
+
+export const splideOptions = {
+    // width: "90%",
+    perPage: 1,
+    perMove: 1,
+    type: 'loop',
+    speed: 1000,
+    keyboard: 'global',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    rewind: true,
+    rewindSpeed: 2000,
+    isNavigation: false,
+    arrows: true,
+    focus: 0,
+    start: 0,
+    interval: 4000,
+    easing: "linear",
+    gap: '0.2rem',
+    pagination: false,
+    extensions: { AutoScroll },
+    autoScroll: {
+        speed: 1,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+    },
+    padding: '1rem',
+    mediaQuery: "min",
+    // breakpoints: {
+    //     1000: { perPage: 4},
+    //     580: { perPage: 3},
+    //     300: { perPage: 2},
+    //     100: { perPage: 1},
+    // },
 };
 
 export const calculateTotal = (data: Cart[]) => {

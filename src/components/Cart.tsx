@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Typography, IconButton } from '@mui/material';
+import { Button, Card, CardContent, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -122,37 +122,30 @@ const Cart = () => {
                                                     </div>
                                                     <div className="sm:w-[160px] w-[200px] flex justify-around 
                                                         items-center">
-                                                        <IconButton 
-                                                            sx={{ 
-                                                                backgroundColor: primaryGreen, 
-                                                                width: window.innerWidth > 500 ? 40 : 25, 
-                                                                height: window.innerWidth > 500 ? 40 : 25, 
-                                                            }}
+                                                        <div 
+                                                            style={{ backgroundColor: primaryGreen }} 
+                                                            className="sm:w-8 sm:h-8 w-7 h-7 rounded-full flexCenter"
                                                             onClick={() => increaseItem(item.p_id)}
                                                         >
                                                             <AddIcon sx={{ color: "white", fontWeight: "bold" }}/>
-                                                        </IconButton>
-                                                        <IconButton 
-                                                            sx={{ 
-                                                                backgroundColor: item.no_of_items === 1 ? "#747463" : secondaryBrown, 
-                                                                width: window.innerWidth > 500 ? 40 : 25, 
-                                                                height: window.innerWidth > 500 ? 40 : 25, 
-                                                            }}
+                                                        </div>
+                                                        <button 
+                                                            style={{ 
+                                                                backgroundColor: item.no_of_items === 1 
+                                                                ? "#747463" : secondaryBrown 
+                                                            }} 
+                                                            className="sm:w-8 sm:h-8 w-7 h-7 rounded-full flexCenter"
                                                             onClick={() => decreaseItem(item.p_id)} 
-                                                            // disabled={item.no_of_items === 1}
+                                                            disabled={item.no_of_items === 1}
                                                         >
                                                             <RemoveIcon sx={{ color: "white", fontWeight: "bold" }}/>
-                                                        </IconButton>
-                                                        <IconButton 
-                                                            sx={{ 
-                                                                backgroundColor: "black", 
-                                                                width: window.innerWidth > 500 ? 40 : 25, 
-                                                                height: window.innerWidth > 500 ? 40 : 25, 
-                                                            }}
+                                                        </button>
+                                                        <div className="bg-black sm:w-8 sm:h-8 w-7 h-7 
+                                                            rounded-full flexCenter"
                                                             onClick={() => removeItem(item.p_id)}
                                                         >
                                                             <DeleteIcon sx={{ color: "white", fontWeight: "bold" }} />
-                                                        </IconButton>
+                                                        </div>
                                                     </div>
                                                 </CardContent>
                                             </Card>

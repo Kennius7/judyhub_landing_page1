@@ -12,7 +12,7 @@ import ProductPicsDisplay from "./ProductPicsDisplay";
 type Product = { 
     id: number; 
     name: string; 
-    image: string; 
+    image: string[]; 
     newPrice: string; 
     oldPrice: string; 
     category?: string;
@@ -56,7 +56,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
         >
             <img 
                 onClick={() => handlePicsClick(id)} 
-                src={image} 
+                src={image[0]} 
                 alt={name} 
                 className="w-full sm:h-[220px] h-[160px] object-cover cursor-pointer"
             />
@@ -121,10 +121,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ item }) => {
                         show={isShowPics} 
                         onClose={handleClosePics} 
                         title={title}
-                        width="600px"
-                        height="500px"
+                        width={window.innerWidth > 768 ? "600px" : "95%"}
+                        height={window.innerWidth > 768 ? "580px" : "450px"}
                     >
-                        <ProductPicsDisplay image={image} onClose={handleClosePics} />
+                        <ProductPicsDisplay image={image} name={name} onClose={handleClosePics} />
                     </ModalPics>
             }
         </div>

@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext, Dispatch, SetStateAction, RefObject } from "react";
 
 
 export type Product = {
@@ -6,7 +6,7 @@ export type Product = {
     name: string;
     category: string;
     tags: string;
-    image: string;
+    image: string[];
     newPrice: string;
     oldPrice: string;
     description: string;
@@ -39,6 +39,7 @@ type MainContextType = {
     setAnimateOutCart: Dispatch<SetStateAction<boolean>>;
     cartCount: number;
     setCartCount: Dispatch<SetStateAction<number>>;
+    allProductsRef: RefObject<HTMLDivElement | null>;
 };
 
 export const MainContext = createContext<MainContextType>({
@@ -60,5 +61,8 @@ export const MainContext = createContext<MainContextType>({
     setAnimateOutCart: () => {},
     cartCount: 0,
     setCartCount: () => {},
+    allProductsRef: {
+        current: null
+    },
 });
 

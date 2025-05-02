@@ -1,11 +1,26 @@
 import { Box, Button, Typography, Container } from '@mui/material';
-import { useContext } from "react";
+import { RefObject, useContext } from "react";
 import { MainContext } from "../context/mainContext";
 
 
 const Hero = () => {
-    const { primaryGreen } = useContext(MainContext);
+    const { primaryGreen, allProductsRef } = useContext(MainContext);
     // console.log("Products Data", fetchedData);
+    const PageScroll = (sectionRef: RefObject<HTMLElement | null>) => {
+        if (sectionRef.current) {
+            // sectionRef?.current?.scrollIntoView({ 
+            //     behavior: "smooth",
+            //     block: "start",
+            // });
+
+            const top = sectionRef.current.offsetTop;
+
+            window.scrollTo({
+                top: top - 70,
+                behavior: "smooth"
+            });
+        }
+    }
 
     return (
         <Box
@@ -62,6 +77,7 @@ const Hero = () => {
                     variant="contained" 
                     size="large" 
                     className="shadow-inner"
+                    onClick={() => PageScroll(allProductsRef)}
                     sx={{ 
                         backgroundColor: primaryGreen, 
                         marginTop: window.innerWidth > 768 ? 2 : 5,

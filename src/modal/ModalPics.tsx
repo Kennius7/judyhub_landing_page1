@@ -64,11 +64,11 @@ const ModalPics = ({
                 onClick={ e => e.stopPropagation() } 
                 style={{ width: width, height: height }}
                 onTransitionEnd={ handleAnimationEnd }
-                className={`bg-white xs:p-[20px] p-[12px] rounded-lg shadow-[0px_0px_5px_0px_#faf5aac2] 
+                className={`bg-white sm:p-[20px] p-[12px] rounded-lg shadow-[0px_0px_5px_0px_#faf5aac2] 
                 ${animateOutPics ? "fadeOutAnimate" : "fadeInAnimate"}`}
             >
                 <div className="w-full flexBetween">
-                    <h2 className="xs:text-[22px] text-[17px] font-medium font-EncodeSans">
+                    <h2 className="sm:text-[22px] text-[18px] font-medium font-EncodeSans">
                         {title}
                     </h2>
                     <button 
@@ -79,7 +79,7 @@ const ModalPics = ({
                     </button>
                 </div>
                 <div className="flex flex-col justify-center items-start">
-                    <hr className="xs:w-[60%] w-[70%] border-[1px] border-slate-600"/>
+                    <hr className="sm:w-[60%] w-[70%] border-[1px] border-slate-600"/>
                     { children }
                 </div>
             </div>

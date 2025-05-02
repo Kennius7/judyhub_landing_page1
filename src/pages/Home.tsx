@@ -5,6 +5,7 @@ import { MainContext } from "../context/mainContext.tsx";
 import Spinner from "../components/Spinner2";
 import Hero from "../components/Hero";
 import NewCollection from "../components/NewCollection";
+import AllCollection from "../components/AllCollection.tsx";
 
 
 
@@ -36,9 +37,7 @@ const Home = () => {
           {/* <ScrollToTop/> */}
           <Hero/>
           <NewCollection/>
-          {/* <Popular/>
-          <Offers/>
-          <NewsLetter/> */}
+          <AllCollection/>
         </section>
       }
     </div>

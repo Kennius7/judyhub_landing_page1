@@ -18,8 +18,7 @@ type Cart = {
 };
 
 export const useCart = () => {
-    // const [cart, setCart] = useState<Cart[]>([]);
-    const { cartData, setCartData } = useContext(MainContext);
+    const { cartData, setCartData, setCartCount } = useContext(MainContext);
 
     useEffect(() => {
         const localStorageCart = JSON.parse(localStorage.getItem("user-cart") || "[]") as Cart[];
@@ -33,24 +32,25 @@ export const useCart = () => {
         localStorage.setItem("user-cart", JSON.stringify(cartData));
     }, [cartData]);
 
-    const addItem = (newItem: Cart) => {
-        setCartData(prevCart => {
-            const existingItem = prevCart.find(item => item.p_id === newItem.p_id);
+    // const addItem = (newItem: Cart) => {
+    //     setCartData(prevCart => {
+    //         const existingItem = prevCart.find(item => item.p_id === newItem.p_id);
 
-            if (existingItem) {
-                return prevCart.map(item =>
-                item.p_id === newItem.p_id
-                    ? { ...item, no_of_items: item.no_of_items + 1 }
-                    : item
-                );
-            } else {
-                return [...prevCart, { ...newItem, no_of_items: 1 }];
-            }
-        });
-    };
+    //         if (existingItem) {
+    //             return prevCart.map(item =>
+    //             item.p_id === newItem.p_id
+    //                 ? { ...item, no_of_items: item.no_of_items + 1 }
+    //                 : item
+    //             );
+    //         } else {
+    //             return [...prevCart, { ...newItem, no_of_items: 1 }];
+    //         }
+    //     });
+    // };
 
     const removeItem = (id: number) => {
         setCartData(prevCart => prevCart.filter(item => item.p_id !== id));
+        setCartCount(prev => prev - 1);
     };
 
   // Increase quantity
@@ -78,11 +78,14 @@ export const useCart = () => {
                     )
                 .filter(item => item.no_of_items > 0)
         );
+        toast("Removed one item...", { type: "success" });
     };
 
+    const clearCart = () => { 
+        setCartData([]);
+        toast("Cart cleared!", { type: "success" });
+    };
 
-    const clearCart = () => { setCartData([]) };
-
-    return { addItem, removeItem, increaseItem, decreaseItem, clearCart };
+    return { removeItem, increaseItem, decreaseItem, clearCart };
 };
 
