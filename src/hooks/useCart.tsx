@@ -82,7 +82,9 @@ export const useCart = () => {
     };
 
     const clearCart = () => { 
+        localStorage.clear();
         setCartData([]);
+        setCartCount(0);
         toast("Cart cleared!", { type: "success" });
     };
 

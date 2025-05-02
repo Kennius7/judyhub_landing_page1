@@ -319,8 +319,8 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
     title: "Contact us",
     links: [
-        {label: "Contact Number", value: ["+234-7033325279", "+234-8055549979"]},
-        {label: "Email Address", value: ["ogbogukenny@yahoo.com", "shinjinchu@gmail.com"]},
+        {label: "Contact Number", value: ["+234-7066936304", "+234-9158518289"]},
+        {label: "Email Address", value: ["wealthyjudy@gmail.com"]},
     ],
 }
 

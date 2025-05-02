@@ -21,10 +21,10 @@ type Cart = {
 };
 
 const Cart = () => {
-    const { primaryGreen, secondaryBrown } = useContext(MainContext);
+    const { primaryGreen, secondaryBrown, cartData } = useContext(MainContext);
     const NGN = getSymbolFromCurrency('NGN');
     const localStorageCart = JSON.parse(localStorage.getItem("user-cart") || "[]") as Cart[];
-    const { increaseItem, decreaseItem, removeItem } = useCart();
+    const { increaseItem, decreaseItem, removeItem, clearCart } = useCart();
     const [isShowWhatsapp, setIsShowWhatsapp] = useState(false);
     const [checkoutHeader] = useState("Checkout Form");
 
@@ -35,29 +35,9 @@ const Cart = () => {
         setIsShowWhatsapp(false);
     }
 
-    // const handleItemAdd = (id: number) => {
-    //     // const newCartItem = { p_id: id, p_name: name, price: price, no_of_items: productQuantity }
-    //     // const newCartItem = localStorageCart.filter(item => item.p_id === id).map(item => item.no_of_items++);
-    //     // setCartData(prevCart => [...prevCart, no_of_items: newCartItem.no_of_items]);
-    //     const existingItem = localStorageCart.find(item => item.p_id === id);
-
-    //     if (existingItem) {
-    //         const updatedCart = localStorageCart.map(item => {
-    //             if (item.p_id === id) {
-    //                 return { ...item, no_of_items: item.no_of_items + 1 };
-    //             }
-    //             return item;
-    //         });
-    //         setCartData(updatedCart);
-    //         localStorage.setItem("user-cart", JSON.stringify(updatedCart));
-    //     }
-    //     toast("Added one product item to your cart", { type: "success" });
-    //     console.log("Cart Data:>>>", localStorageCart);
+    // const handleClearCart = () => {
+    //     localStorage.clear();
     // }
-
-    const handleClearCart = () => {
-        localStorage.clear();
-    }
 
 
     return (
@@ -77,7 +57,7 @@ const Cart = () => {
                                 <div className="w-full max-h-[350px] flex flex-col justify-start items-center 
                                     overflow-y-auto">
                                     {
-                                        localStorageCart.map((item) => (
+                                        cartData.map((item) => (
                                             <Card 
                                                 key={item.p_id} 
                                                 style={{ 
@@ -155,7 +135,7 @@ const Cart = () => {
                                 <div className="w-full">
                                     <div className="w-full flex justify-start items-center mb-1">
                                         <Typography variant="h6">
-                                            Total: {NGN}{formatNumber(Number(calculateTotal(localStorageCart)))}
+                                            Total: {NGN}{formatNumber(Number(calculateTotal(cartData)))}
                                         </Typography>
                                     </div>
                                     <div className="w-full flex justify-between items-center">
@@ -169,7 +149,7 @@ const Cart = () => {
                                         <Button 
                                             variant="contained" 
                                             color="secondary" 
-                                            onClick={handleClearCart}
+                                            onClick={clearCart}
                                         >
                                             Clear Cart
                                         </Button>

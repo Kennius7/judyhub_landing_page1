@@ -1,7 +1,7 @@
-
 import React, { useState, useContext } from "react";
 import { MainContext } from "../context/mainContext";
 import getSymbolFromCurrency from "currency-symbol-map";
+import axios from "axios";
 
 interface FormData {
     name: string;
@@ -12,12 +12,19 @@ interface FormData {
 const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
     const { cartData } = useContext(MainContext);
     const NGN = getSymbolFromCurrency("NGN");
+    const emailURL = import.meta.env.VITE_API_EMAIL_URL;
     const sellerPhoneNumber = "2347066936304";
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         message: "",
     });
+
+    const totalCartPrice = cartData.reduce((acc, item) => {
+        const price = parseInt(item.price.replace(/,/g, '')) || 0;
+        const quantity = item.no_of_items || 0;
+        return acc + (price * quantity);
+    }, 0);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -36,29 +43,57 @@ const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
             return;
         }
 
-        const cartMessageBody = cartData.map(item => {
+        const emailMessageBody = cartData.map(item => {
             const price = parseInt(item.price.replace(/,/g, "")) || 0;
             const quantity = parseInt(item.no_of_items.toString()) || 0;
             const totalPrice = price * quantity;
             // const totalPrice = Number(item.price) * item.no_of_items;
-            return `Name: ${item.p_name}\nQuantity: ${item.no_of_items}\nTotal Product Price: ${NGN}${totalPrice}\n\n\n`
+            return `Name: ${item.p_name} \n<br> Quantity: ${item.no_of_items} \n<br> Total Product Price: ${NGN}${totalPrice}\n\n\n<br><br>`
         })
+        .join('');
 
-        const fullMessage = `I'm interested in buying these products: \n\n${cartMessageBody}\n` + message ;
+        const whatsappMessageBody = cartData.map(item => {
+            const price = parseInt(item.price.replace(/,/g, "")) || 0;
+            const quantity = parseInt(item.no_of_items.toString()) || 0;
+            const totalPrice = price * quantity;
+            // const totalPrice = Number(item.price) * item.no_of_items;
+            return `Name: ${item.p_name}\nQuantity: ${item.no_of_items} \nTotal Product Price: ${NGN}${totalPrice}\n\n\n`
+        })
+        .join('');
 
-        const text = `Hello, my name is ${name}.\nMy email is:(${email}).\n${fullMessage || "I'm interested in your product."}`;
+        const fullMessage = `I'm interested in buying these products: \n\n${emailMessageBody}\n` + message ;
+        const whatsappMessage = `I'm interested in buying these products: \n\n${whatsappMessageBody}\n` + message ;
+        const text = `Hello, my name is ${name}.\nMy email is: (${email}).\n${whatsappMessage || "I'm interested in your product."}\nTotal Price: ${NGN}${totalCartPrice.toString()}`;
         const encodedText = encodeURIComponent(text);
 
+        const sendEmail = async () => {
+            try {
+                console.log("Sending...");
+                const apiType = "LANDING";
+                const response = await axios.post(emailURL, { name, email, fullMessage, totalCartPrice, apiType });
+                console.log("Response Data:>>>>", response);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
         const whatsappUrl = `https://wa.me/${sellerPhoneNumber}?text=${encodedText}`;
+        sendEmail();
         window.open(whatsappUrl, "_blank");
         setTimeout(() => { onClose() }, 1000);
     };
 
     return (
-        <div style={{ width: "80%", margin: "0 auto", padding: "1rem" }}>
+        <div className="w-full m-1 p-1">
             <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: "1rem" }}>
-                    <label htmlFor="name">Name:</label><br />
+                <div className="mb-2 mt-4">
+                    <label 
+                        htmlFor="name" 
+                        className="sm:text-[18px] text-[17px] font-sans font-semibold"
+                    >
+                        Name:
+                    </label>
+                    <br />
                     <input
                         type="text"
                         id="name"
@@ -66,12 +101,18 @@ const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: "0.5rem", backgroundColor: "rgba(255, 255, 180, 0.3)" }}
+                        className="w-full p-1 bg-[#e9e5e5]"
                     />
                 </div>
 
-                <div style={{ marginBottom: "1rem" }}>
-                    <label htmlFor="email">Email:</label><br />
+                <div className="mb-2">
+                    <label 
+                        htmlFor="email" 
+                        className="sm:text-[18px] text-[17px] font-sans font-semibold"
+                    >
+                        Email:
+                    </label>
+                    <br />
                     <input
                         type="email"
                         id="email"
@@ -79,19 +120,25 @@ const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: "0.5rem", backgroundColor: "rgba(255, 255, 180, 0.4)" }}
+                        className="w-full p-1 bg-[#e9e5e5]"
                     />
                 </div>
 
-                <div style={{ marginBottom: "1rem" }}>
-                    <label htmlFor="message">Message (optional):</label><br />
+                <div className="mb-8">
+                    <label 
+                        htmlFor="message" 
+                        className="sm:text-[18px] text-[17px] font-sans font-semibold"
+                    >
+                        Message (optional):
+                    </label>
+                    <br />
                     <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         rows={4}
-                        style={{ width: "100%", padding: "0.5rem", backgroundColor: "rgba(255, 255, 180, 0.4)" }}
+                        className="w-full p-1 bg-[#e9e5e5]"
                     />
                 </div>
 
