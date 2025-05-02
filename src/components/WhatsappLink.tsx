@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { MainContext } from "../context/mainContext";
 import getSymbolFromCurrency from "currency-symbol-map";
 import axios from "axios";
+import { formatNumber } from '../data';
 
 interface FormData {
     name: string;
@@ -47,8 +48,7 @@ const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
             const price = parseInt(item.price.replace(/,/g, "")) || 0;
             const quantity = parseInt(item.no_of_items.toString()) || 0;
             const totalPrice = price * quantity;
-            // const totalPrice = Number(item.price) * item.no_of_items;
-            return `Name: ${item.p_name} \n<br> Quantity: ${item.no_of_items} \n<br> Total Product Price: ${NGN}${totalPrice}\n\n\n<br><br>`
+            return `<br>Name: ${item.p_name}<br>Quantity: ${item.no_of_items}<br>Total Product Price: ${NGN}${formatNumber(totalPrice)}<br><br>`
         })
         .join('');
 
@@ -56,21 +56,21 @@ const WhatsAppContact = ({ onClose }: { onClose: () => void }) => {
             const price = parseInt(item.price.replace(/,/g, "")) || 0;
             const quantity = parseInt(item.no_of_items.toString()) || 0;
             const totalPrice = price * quantity;
-            // const totalPrice = Number(item.price) * item.no_of_items;
-            return `Name: ${item.p_name}\nQuantity: ${item.no_of_items} \nTotal Product Price: ${NGN}${totalPrice}\n\n\n`
+            return `Name: ${item.p_name}\nQuantity: ${item.no_of_items} \nTotal Product Price: ${NGN}${formatNumber(totalPrice)}\n\n`
         })
         .join('');
 
-        const fullMessage = `I'm interested in buying these products: \n\n${emailMessageBody}\n` + message ;
-        const whatsappMessage = `I'm interested in buying these products: \n\n${whatsappMessageBody}\n` + message ;
-        const text = `Hello, my name is ${name}.\nMy email is: (${email}).\n${whatsappMessage || "I'm interested in your product."}\nTotal Price: ${NGN}${totalCartPrice.toString()}`;
+        const fullMessage = `I'm interested in buying these products: \n\n${emailMessageBody}\n`;
+        const whatsappMessage = `I'm interested in buying these products: \n\n${whatsappMessageBody}\n`;
+
+        const text = `Hello, my name is ${name}.\nMy email is: (${email}).\n${message}\n\n${whatsappMessage || "I'm interested in your product."}\nTotal Price: ${NGN}${formatNumber(totalCartPrice).toString()}`;
         const encodedText = encodeURIComponent(text);
 
         const sendEmail = async () => {
             try {
                 console.log("Sending...");
                 const apiType = "LANDING";
-                const response = await axios.post(emailURL, { name, email, fullMessage, totalCartPrice, apiType });
+                const response = await axios.post(emailURL, { name, email, message, fullMessage, totalCartPrice, apiType });
                 console.log("Response Data:>>>>", response);
             } catch (error) {
                 console.error("Error:", error);
